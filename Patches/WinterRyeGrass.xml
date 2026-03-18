@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+			<!-- Winter RyeGrass -->
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+					<ThingDef ParentName="PlantBase">
+						<defName>WinterRyeGrass</defName>
+						<label>Winter RyeGrass</label>
+						<description>Winter RyeGrass is a fast growing pasture grass generally planted in the fall or early winter. It is cold hardy, and can survive through all but the harshest of winters and serve as a steady source of animal grazing grass when no other plants are growing on the map.
+						
+Winter RyeGrass can not be planted if the temperature is below -20°C since the ground will be frozen, and it has an optimal growing temperature range of -25°C to 15°C.</description>
+						<thingClass>ExpandablePlants.Plant</thingClass>
+						<statBases>
+							<MaxHitPoints>85</MaxHitPoints>
+							<Flammability>1.3</Flammability>
+							<Nutrition>0.50</Nutrition>
+						</statBases>
+						<graphicData>
+							<texPath>Things/Plant/Grass</texPath>
+							<graphicClass>Graphic_Random</graphicClass>
+						</graphicData>
+						<ingestible/>
+						<plant>
+							<sowTags>
+								<li>Ground</li>
+							</sowTags>
+							<fertilityMin>0.05</fertilityMin>
+							<fertilitySensitivity>1</fertilitySensitivity>
+							<growDays>2.5</growDays>
+							<lifespanDaysPerGrowDays>48</lifespanDaysPerGrowDays>
+							<neverBlightable>true</neverBlightable>
+							<leaflessGraphicPath>Things/Plant/Grass_Leafless</leaflessGraphicPath>
+							<harvestWork>40</harvestWork>
+							<maxMeshCount>9</maxMeshCount>
+							<visualSizeRange>0.3~0.9</visualSizeRange>
+							<topWindExposure>0.4</topWindExposure>
+							<pollutedGraphicPath>Things/Plant/Grass_Polluted</pollutedGraphicPath>
+						</plant>
+						<comps>
+							<li Class="ExpandablePlants.CompProperties_Plant">
+								<maxGrowthTemperature>25</maxGrowthTemperature>
+								<maxOptimalGrowthTemperature>15</maxOptimalGrowthTemperature>
+								<minOptimalGrowthTemperature>-25</minOptimalGrowthTemperature>
+								<maxLeaflessTemperature>-27</maxLeaflessTemperature>
+								<minGrowthTemperature>-35</minGrowthTemperature>
+								<minLeaflessTemperature>-50</minLeaflessTemperature>
+								<restBegins>19</restBegins>
+								<restEnds>5</restEnds>
+							</li>
+						</comps>
+					</ThingDef>
+					
+				</value>
+			</li>
+			
+			<!-- Dark Winter RyeGrass -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+					<ThingDef ParentName="CavePlantBase">
+						<defName>DarkWinterRyeGrass</defName>
+						<label>Dark Winter RyeGrass</label>
+						<description>Dark Winter RyeGrass is a fast growing grass adapted for growth in no-sunlight conditions, and is generally planted in the fall or early winter. It is cold hardy, and can survive through all but the harshest of winters and serve as a steady source of animal grazing grass when no other plants are growing on the map.
+						
+Dark Winter RyeGrass can not be planted if the temperature is below -20°C, since the ground will be frozen. It has an optimal growing temperature range of -25°C to 15°C and will die if it is exposed to light.</description>
+						<thingClass>ExpandablePlants.Plant</thingClass>
+						<statBases>
+							<MaxHitPoints>65</MaxHitPoints>
+							<Flammability>0.5</Flammability>
+							<Nutrition>0.50</Nutrition>
+						</statBases>
+						<graphicData>
+							<texPath>Things/Plant/Grass</texPath>
+							<graphicClass>Graphic_Random</graphicClass>
+							<drawSize>1.4</drawSize>
+						</graphicData>
+						<uiIconScale>0.715</uiIconScale>
+						<ingestible/>
+						<plant>
+							<sowTags>
+								<li>Ground</li>
+							</sowTags>
+							<fertilityMin>0.05</fertilityMin>
+							<fertilitySensitivity>1</fertilitySensitivity>
+							<growDays>2.5</growDays>
+							<lifespanDaysPerGrowDays>48</lifespanDaysPerGrowDays>
+							<neverBlightable>true</neverBlightable>
+							<harvestWork>40</harvestWork>
+							<maxMeshCount>9</maxMeshCount>
+							<visualSizeRange>0.3~0.9</visualSizeRange>
+							<topWindExposure>0.4</topWindExposure>
+							<pollution>Any</pollution>
+							<growMinGlow>0</growMinGlow>
+							<growOptimalGlow>0</growOptimalGlow>
+							<diesToLight>true</diesToLight>
+						</plant>
+						<comps>
+							<li Class="ExpandablePlants.CompProperties_Plant">
+								<maxGrowthTemperature>25</maxGrowthTemperature>
+								<maxOptimalGrowthTemperature>15</maxOptimalGrowthTemperature>
+								<minOptimalGrowthTemperature>-25</minOptimalGrowthTemperature>
+								<maxLeaflessTemperature>-27</maxLeaflessTemperature>
+								<minGrowthTemperature>-35</minGrowthTemperature>
+								<minLeaflessTemperature>-50</minLeaflessTemperature>
+								<restBegins>19</restBegins>
+								<restEnds>5</restEnds>
+							</li>
+						</comps>
+					</ThingDef>
+					
+				</value>
+			</li>
+				
+			<!-- Use Nightgrass texture if Odyssey is present -->
+			
+			<li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+				<xpath>
+        /Defs/ThingDef[defName="DarkWinterRyeGrass"]/graphicData/texPath
+				</xpath>
+				<value>
+					<texPath>Things/Plant/Nightgrass</texPath>
+				</value>
+			</li>
+			
+			<!-- ================= Settings Winter RyeGrass ================= -->
+
+
+			<li Class="PatchOperationSequence" MayRequire="imranfish.xmlextensions">
+				<operations>
+	
+					<!-- Max Growth Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGmaxGrowthTemperature</key>
+						<defaultValue>25</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/maxGrowthTemperature</xpath>
+								<value>
+									<maxGrowthTemperature>{WRGmaxGrowthTemperature}</maxGrowthTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+	  
+					<!-- Max Optimal Growth Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGmaxOptimalGrowthTemperature</key>
+						<defaultValue>15</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/maxOptimalGrowthTemperature</xpath>
+								<value>
+									<maxOptimalGrowthTemperature>{WRGmaxOptimalGrowthTemperature}</maxOptimalGrowthTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+	  
+					<!-- Min Optimal Growth Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGminOptimalGrowthTemperature</key>
+						<defaultValue>-25</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/minOptimalGrowthTemperature</xpath>
+								<value>
+									<minOptimalGrowthTemperature>{WRGminOptimalGrowthTemperature}</minOptimalGrowthTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+	  
+					<!-- Max Leafless Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGmaxLeaflessTemperature</key>
+						<defaultValue>-27</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/maxLeaflessTemperature</xpath><value>
+									<maxLeaflessTemperature>{WRGmaxLeaflessTemperature}</maxLeaflessTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+			
+					<!-- Min Growth Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGminGrowthTemperature</key>
+						<defaultValue>-35</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/minGrowthTemperature</xpath>
+								<value>
+									<minGrowthTemperature>{WRGminGrowthTemperature}</minGrowthTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+	  
+					<!-- Min Leafless Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGminLeaflessTemperature</key>
+						<defaultValue>-50</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/minLeaflessTemperature</xpath>
+								<value>
+									<minLeaflessTemperature>{WRGminLeaflessTemperature}</minLeaflessTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Grow Days -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGgrowDays</key>
+						<defaultValue>2.5</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/plant/growDays</xpath>
+								<value>
+									<growDays>{WRGgrowDays}</growDays>
+								</value>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Set Lifespan (player input) -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGlifespanDays</key>
+						<defaultValue>120</defaultValue>
+						<apply>
+							<!-- Step 1: Set lifespanDaysPerGrowDays to the raw lifespan value -->
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/plant/lifespanDaysPerGrowDays</xpath>
+								<value>
+									<lifespanDaysPerGrowDays>{WRGlifespanDays}</lifespanDaysPerGrowDays>
+								</value>
+							</li>
+							<!-- Step 2: Divide by growDays using PatchOperationMath -->
+							<li Class="XmlExtensions.PatchOperationMath">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/plant/lifespanDaysPerGrowDays</xpath>
+								<value>Defs/ThingDef[defName="WinterRyeGrass"]/plant/growDays</value>
+								<operation>/</operation>
+								<fromXml>true</fromXml>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Fertility Sensitivity -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGfertilitySensitivity</key>
+						<defaultValue>100</defaultValue>
+						<apply>
+							<!-- Step 1: Set fertilitySensitivity to the raw Fertility Sensitivity value -->
+							<li Class="XmlExtensions.PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/plant/fertilitySensitivity</xpath>
+								<value>
+									<fertilitySensitivity>{WRGfertilitySensitivity}</fertilitySensitivity>
+								</value>
+							</li>
+							<!-- Step 2: Divide by 100 using PatchOperationMath -->
+							<li Class="XmlExtensions.PatchOperationMath">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/plant/fertilitySensitivity</xpath>
+								<value>100</value>
+								<operation>/</operation>
+								<fromXml>false</fromXml>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Rest Begins -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGrestBegins</key>
+						<defaultValue>19</defaultValue>
+						<apply>
+							<!-- Step 1: Set restBegins to the raw user input -->
+							<li Class="XmlExtensions.PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/restBegins</xpath>
+								<value>
+									<restBegins>{WRGrestBegins}</restBegins>
+								</value>
+							</li>
+							<!-- Step 2: Divide restBegins by 24 -->
+							<li Class="XmlExtensions.PatchOperationMath">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/restBegins</xpath>
+								<value>24</value>
+								<operation>/</operation>
+								<fromXml>false</fromXml>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Rest Ends -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGrestEnds</key>
+						<defaultValue>5</defaultValue>
+						<apply>
+							<!-- Step 1: Set restEnds to the raw user input -->
+							<li Class="XmlExtensions.PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/restEnds</xpath>
+								<value>
+									<restEnds>{WRGrestEnds}</restEnds>
+								</value>
+							</li>
+							<!-- Step 2: Divide restEnds by 24 -->
+							<li Class="XmlExtensions.PatchOperationMath">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/restEnds</xpath>
+								<value>24</value>
+								<operation>/</operation>
+								<fromXml>false</fromXml>
+							</li>
+						</apply>
+					</li>
+			
+					<!-- Nutrition -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGNutrition</key>
+						<defaultValue>0.5</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/statBases/Nutrition</xpath>
+								<value>
+									<Nutrition>{WRGNutrition}</Nutrition>
+								</value>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Set Nonflammable -->
+			
+					<li Class="XmlExtensions.OptionalPatch">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGFlammability</key>
+						<defaultValue>false</defaultValue>
+						<caseTrue>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/statBases/Flammability</xpath>
+								<value>
+									<Flammability>0</Flammability>
+								</value>
+							</li>
+						</caseTrue>
+					</li>
+
+					<!-- Set Vacuum Resistant -->
+			
+					<!-- <li Class="XmlExtensions.OptionalPatch">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>RGVacResist</key>
+						<defaultValue>false</defaultValue>
+						<caseTrue>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant</xpath>
+								<value>
+									<vacuumResistant>true</vacuumResistant>
+								</value>
+							</li>
+
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/fertilityMin</xpath>
+								<value>
+									<fertilityMin>0</fertilityMin>
+								</value>
+							</li>
+
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/fertilitySensitivity</xpath>
+								<value>
+									<fertilitySensitivity>0</fertilitySensitivity>
+								</value>
+							</li>
+						</caseTrue>
+					</li> -->
+					
+					<!-- Make the Grass Selectable -->
+			
+					<li Class="XmlExtensions.OptionalPatch">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGselectable</key>
+						<defaultValue>false</defaultValue>
+						<caseTrue>
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/ThingDef[defName="WinterRyeGrass"]</xpath>
+								<value>
+									<selectable>true</selectable>
+								</value>
+							</li>
+						</caseTrue>
+					</li>
+					
+					<!-- Hydroponics -->
+					
+					<li Class="XmlExtensions.OptionalPatch">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>WRGHydroponics</key>
+						<defaultValue>false</defaultValue>
+						<caseTrue>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/ThingDef[defName="WinterRyeGrass"]/plant/sowTags</xpath>
+								<value>
+									<li>Hydroponic</li>
+								</value>
+							</li>
+						</caseTrue>
+					</li>
+					
+			
+					<!-- ================= Settings Dark Winter RyeGrass ================= -->
+
+					<!-- Max Growth Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGmaxGrowthTemperature</key>
+						<defaultValue>25</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/maxGrowthTemperature</xpath>
+								<value>
+									<maxGrowthTemperature>{DWRGmaxGrowthTemperature}</maxGrowthTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+	  
+					<!-- Max Optimal Growth Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGmaxOptimalGrowthTemperature</key>
+						<defaultValue>15</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/maxOptimalGrowthTemperature</xpath>
+								<value>
+									<maxOptimalGrowthTemperature>{DWRGmaxOptimalGrowthTemperature}</maxOptimalGrowthTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+	  
+					<!-- Min Optimal Growth Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGminOptimalGrowthTemperature</key>
+						<defaultValue>-25</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/minOptimalGrowthTemperature</xpath>
+								<value>
+									<minOptimalGrowthTemperature>{DWRGminOptimalGrowthTemperature}</minOptimalGrowthTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+	  
+					<!-- Max Leafless Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGmaxLeaflessTemperature</key>
+						<defaultValue>-27</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/maxLeaflessTemperature</xpath><value>
+									<maxLeaflessTemperature>{DWRGmaxLeaflessTemperature}</maxLeaflessTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+			
+					<!-- Min Growth Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGminGrowthTemperature</key>
+						<defaultValue>-35</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/minGrowthTemperature</xpath>
+								<value>
+									<minGrowthTemperature>{DWRGminGrowthTemperature}</minGrowthTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+	  
+					<!-- Min Leafless Temperature -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGminLeaflessTemperature</key>
+						<defaultValue>-50</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/minLeaflessTemperature</xpath>
+								<value>
+									<minLeaflessTemperature>{DWRGminLeaflessTemperature}</minLeaflessTemperature>
+								</value>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Grow Days -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGgrowDays</key>
+						<defaultValue>2.5</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/growDays</xpath>
+								<value>
+									<growDays>{DWRGgrowDays}</growDays>
+								</value>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Set Lifespan (player input) -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGlifespanDays</key>
+						<defaultValue>120</defaultValue>
+						<apply>
+							<!-- Step 1: Set lifespanDaysPerGrowDays to the raw lifespan value -->
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/lifespanDaysPerGrowDays</xpath>
+								<value>
+									<lifespanDaysPerGrowDays>{DWRGlifespanDays}</lifespanDaysPerGrowDays>
+								</value>
+							</li>
+							<!-- Step 2: Divide by growDays using PatchOperationMath -->
+							<li Class="XmlExtensions.PatchOperationMath">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/lifespanDaysPerGrowDays</xpath>
+								<value>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/growDays</value>
+								<operation>/</operation>
+								<fromXml>true</fromXml>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Fertility Sensitivity -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGfertilitySensitivity</key>
+						<defaultValue>100</defaultValue>
+						<apply>
+							<!-- Step 1: Set fertilitySensitivity to the raw Fertility Sensitivity value -->
+							<li Class="XmlExtensions.PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/fertilitySensitivity</xpath>
+								<value>
+									<fertilitySensitivity>{DWRGfertilitySensitivity}</fertilitySensitivity>
+								</value>
+							</li>
+							<!-- Step 2: Divide by 100 using PatchOperationMath -->
+							<li Class="XmlExtensions.PatchOperationMath">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/fertilitySensitivity</xpath>
+								<value>100</value>
+								<operation>/</operation>
+								<fromXml>false</fromXml>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Rest Begins -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGrestBegins</key>
+						<defaultValue>19</defaultValue>
+						<apply>
+							<!-- Step 1: Set restBegins to the raw user input -->
+							<li Class="XmlExtensions.PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/restBegins</xpath>
+								<value>
+									<restBegins>{DWRGrestBegins}</restBegins>
+								</value>
+							</li>
+							<!-- Step 2: Divide restBegins by 24 -->
+							<li Class="XmlExtensions.PatchOperationMath">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/restBegins</xpath>
+								<value>24</value>
+								<operation>/</operation>
+								<fromXml>false</fromXml>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Rest Ends -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGrestEnds</key>
+						<defaultValue>5</defaultValue>
+						<apply>
+							<!-- Step 1: Set restEnds to the raw user input -->
+							<li Class="XmlExtensions.PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/restEnds</xpath>
+								<value>
+									<restEnds>{DWRGrestEnds}</restEnds>
+								</value>
+							</li>
+							<!-- Step 2: Divide restEnds by 24 -->
+							<li Class="XmlExtensions.PatchOperationMath">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/comps/li[@Class="ExpandablePlants.CompProperties_Plant"]/restEnds</xpath>
+								<value>24</value>
+								<operation>/</operation>
+								<fromXml>false</fromXml>
+							</li>
+						</apply>
+					</li>
+			
+					
+					<!-- Nutrition -->
+			
+					<li Class="XmlExtensions.UseSetting">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGNutrition</key>
+						<defaultValue>0.5</defaultValue>
+						<apply>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/statBases/Nutrition</xpath>
+								<value>
+									<Nutrition>{DWRGNutrition}</Nutrition>
+								</value>
+							</li>
+						</apply>
+					</li>
+
+					<!-- Set Nonflammable -->
+			
+					<li Class="XmlExtensions.OptionalPatch">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGFlammability</key>
+						<defaultValue>false</defaultValue>
+						<caseTrue>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/statBases/Flammability</xpath>
+								<value>
+									<Flammability>0</Flammability>
+								</value>
+							</li>
+						</caseTrue>
+					</li>
+					
+					<!-- Set Vacuum Resistant -->
+			
+					<!-- <li Class="XmlExtensions.OptionalPatch">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGVacResist</key>
+						<defaultValue>false</defaultValue>
+						<caseTrue>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant</xpath>
+								<value>
+									<vacuumResistant>true</vacuumResistant>
+								</value>
+							</li>
+
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/fertilityMin</xpath>
+								<value>
+									<fertilityMin>0</fertilityMin>
+								</value>
+							</li>
+
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/fertilitySensitivity</xpath>
+								<value>
+									<fertilitySensitivity>0</fertilitySensitivity>
+								</value>
+							</li>
+						</caseTrue>
+					</li> -->
+
+					<!-- Make the Grass Selectable -->
+			
+					<li Class="XmlExtensions.OptionalPatch">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGselectable</key>
+						<defaultValue>false</defaultValue>
+						<caseTrue>
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/ThingDef[defName="DarkWinterRyeGrass"]</xpath>
+								<value>
+									<selectable>true</selectable>
+								</value>
+							</li>
+						</caseTrue>
+					</li>
+					
+					<!-- Hydroponics -->
+					
+					<li Class="XmlExtensions.OptionalPatch">
+						<modId>Vita.WinterRyeGrass</modId>
+						<key>DWRGHydroponics</key>
+						<defaultValue>false</defaultValue>
+						<caseTrue>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/ThingDef[defName="DarkWinterRyeGrass"]/plant/sowTags</xpath>
+								<value>
+									<li>Hydroponic</li>
+								</value>
+							</li>
+						</caseTrue>
+					</li>
+					
+				</operations>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<XmlExtensions.SettingsMenuDef MayRequire="imranfish.xmlextensions">
+		<modId>Vita.WinterRyeGrass</modId>
+		<label>Winter RyeGrass</label>
+		<defaultSpacing>3</defaultSpacing>
+		
+		<settings>
+			<li Class="XmlExtensions.Setting.Gap">
+				<spacing>50</spacing>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Settings</text>
+				<color>22,128,64</color>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+			</li>
+			<li Class="XmlExtensions.Setting.Gap">
+				<spacing>10</spacing>
+			</li>
+
+			<li Class="XmlExtensions.Setting.GapLine"/>
+			
+			<!-- ================= Winter RyeGrass ================= -->
+
+			<li Class="XmlExtensions.Setting.Gap">
+				<spacing>10</spacing>
+			</li>
+			<li Class="XmlExtensions.Setting.CollapsibleSettings">
+				<label>Winter RyeGrass</label>
+				<headerFont>Medium</headerFont>
+				<defaultState>Closed</defaultState>
+				<padLeft>0</padLeft>
+				<anchor>Left</anchor>
+				<settings>
+
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Temperatures should descend in order from highest to lowest</text>
+						<anchor>Middle</anchor>
+					</li>
+					<li Class="XmlExtensions.Setting.SplitColumns">
+						<gapSize>0</gapSize>
+						<drawLine>false</drawLine>
+						<widths>
+							<li>225</li>
+							<li>290</li>
+						</widths>
+						<anchors>
+							<li>Middle</li>
+							<li>Middle</li>
+							<li>Middle</li>
+						</anchors>
+						<settings>
+						
+							<!--Column one-->
+						
+							<li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>At temperatures above this level, the grass will begin to die.</text>
+									<tooltip>At temperatures above this level, the grass will begin to die.</tooltip>
+									<color>250,100,10</color>
+									<padLeft>10</padLeft>
+									<padBelow>0</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>This is the upper range of normal grass growth.</text>
+									<tooltip>This is the upper range of normal grass growth.&#10;&#10;At temperatures above this level, the growth rate slows linearly from 100% to 0% when it reaches the Max Growth Temp setting.</tooltip>
+									<color>218,197,70</color>
+									<padBelow>15</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>This is the optimal growth temp range.</text>
+									<tooltip>This is the optimal growth temperature range.  The grass will grow at 100% growth rate within this range.</tooltip>
+									<color>146,208,80</color>
+									<padBelow>15</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>This is the lower range of normal grass growth.</text>
+									<tooltip>This is the lower range of normal grass growth.&#10;&#10;At temperatures below this level, the growth rate slows linearly from 100% to 0% when it reaches the Min Growth Temp setting.</tooltip>
+									<color>78,210,147</color>
+									<padBelow>0</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>At temperatures below this level, the grass will turn brown in color.</text>
+									<tooltip>At temperatures below this level, the grass will turn brown in color, but will not die. This is a visual change only, and is meant to be an indicator that the grass is not growing at its normal rate.</tooltip>
+									<color>153,102,0</color>
+									<padBelow>0</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>At temperatures below this level, the grass will stop growing.</text>
+									<tooltip>At temperatures below this level, the grass will cease to grow, but will not die.</tooltip>
+									<color>90,169,214</color>
+									<padBelow>0</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>At temperatures below this level, the grass will begin to die.</text>
+									<tooltip>At temperatures below this level, the grass will begin to die.</tooltip>
+									<color>50,87,246</color>
+									<padBelow>0</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+							</li>
+
+							<!-- Visual Image -->
+
+							<li>
+								<li Class="XmlExtensions.Setting.DrawImage">
+									<texPath>Visual</texPath>
+									<dimensions>290,322</dimensions>
+									<anchor>Middle</anchor>
+								</li>
+							</li>
+
+							<!--Column three-->
+
+							<li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>WRGmaxGrowthTemperature</key>
+									<label>Max Growth Temp</label>
+									<color>250,100,10</color>
+									<defaultValue>25</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= 25°C,         Vanilla grass= 75°C</text>
+									<tooltip>At temperatures above this level, the grass will begin to die.</tooltip>
+									<color>250,100,10</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>WRGmaxOptimalGrowthTemperature</key>
+									<label>Max Optimal Temp</label>
+									<color>218,197,70</color>
+									<defaultValue>15</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= 15°C,         Vanilla grass= 42°C</text>
+									<tooltip>This is the upper range of normal grass growth.&#10;At temperatures above this level, the growth rate slows linearly from 100% to 0% when it reaches the Max Growth Temp setting.</tooltip>
+									<color>218,197,70</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>WRGminOptimalGrowthTemperature</key>
+									<label>Min Optimal Temp</label>
+									<color>78,210,147</color>
+									<defaultValue>-25</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= -25°C,       Vanilla grass= 10°C</text>
+									<tooltip>This is the lower range of normal grass growth.&#10;At temperatures below this level, the growth rate slows linearly from 100% to 0% when it reaches the Min Growth Temp setting.</tooltip>
+									<color>78,210,147</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>WRGmaxLeaflessTemperature</key>
+									<label>Max Leafless Temp</label>
+									<color>153,102,0</color>
+									<defaultValue>-27</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= -27°C,        Vanilla grass= -2°C</text>
+									<tooltip>At temperatures below this level, the grass will turn brown in color, but will not die.&#10;&#10;This is a visual change only, and is meant to be an indicator that the grass is not growing at its normal rate.</tooltip>
+									<color>153,102,0</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>WRGminGrowthTemperature</key>
+									<label>Min Growth Temp</label>
+									<color>90,169,214</color><color>90,169,214</color>
+									<defaultValue>-35</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= -35°C,        Vanilla grass= 0°C</text>
+									<tooltip>At temperatures below this level, the grass will cease to grow, but will not die.</tooltip>
+									<color>90,169,214</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>WRGminLeaflessTemperature</key>
+									<label>Min Leafless Temp</label>
+									<color>50,87,246</color>
+									<defaultValue>-50</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= -50°C,        Vanilla grass= -10°C</text>
+									<tooltip>At temperatures below this level, the grass will begin to die.</tooltip>
+									<color>50,87,246</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+							</li>
+						</settings>
+					</li>
+					
+					<!--Gap-->
+					
+					<li Class="XmlExtensions.Setting.Gap">
+						<spacing>20</spacing>
+					</li>
+			
+					<!--Growth Stats-->
+			
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>How many straight days of growing time it will take for the grass to reach maturity, not including the plant's resting period</text>
+								<tooltip>*This is not the actual growing days, since the grass must rest during the night.  The actual formula is shown down below, and depends on the plant's fertility sensitivity, as well as the fertility of the soil it is planted in.&#10;&#10;For example: If you use the default settings, it will take this many actual days to reach maturity:&#10;&#10;Winter RyeGrass	|     Vanilla Grass&#10;Poor Soil: 6.6	|     Poor Soil: 5.1&#10;Normal Soil: 4.6	|     Normal Soil: 4.6&#10;Rich soil: 3.3	|     Rich soil: 4.1</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>WRGgrowDays</key>
+								<label>Grow Days*</label>
+								<color>146,208,80</color>
+								<defaultValue>2.5</defaultValue>
+								<min>0.001</min>
+								<max>999999</max>
+								<decimals>2</decimals>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 2.5,            Vanilla grass= 2.5</text>
+								<tooltip>*This is not the actual growing days, since the grass must rest during the night.  The actual formula is shown down below, and depends on the plant's fertility sensitivity, as well as the fertility of the soil it is planted in.&#10;&#10;For example: If you use the default settings, it will take this many actual days to reach maturity:&#10;&#10;Winter RyeGrass	|     Vanilla Grass&#10;Poor Soil: 6.6	|     Poor Soil: 5.1&#10;Normal Soil: 4.6	|     Normal Soil: 4.6&#10;Rich soil: 3.3	|     Rich soil: 4.1</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+								
+					<!-- Fertility Sensitivity -->
+				
+					<li Class="XmlExtensions.Setting.SplitColumn">
+							
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>How sensitive this plant is to soil fertility.</text>
+								<tooltip>Low numbers mean the grass will grow about the same speed in rich or poor soil. High numbers mean the plant will grow slower in poor soil, but faster in rich soil.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>WRGfertilitySensitivity</key>
+								<label>Fertility Sensitivity</label>
+								<color>146,208,80</color>
+								<defaultValue>100</defaultValue>
+								<decimals>0</decimals>
+								<percent>True</percent>
+								<min>0</min>
+								<max>200</max>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 100%,        Vanilla grass= 30%</text>
+								<tooltip>Low numbers mean the grass will grow about the same speed in rich or poor soil. High numbers mean the plant will grow slower in poor soil, but faster in rich soil.</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Lifespan Days -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>How many days the grass will last before dying naturally of old age.</text>
+								<tooltip>How many days the grass will last before dying naturally of old age.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>WRGlifespanDays</key>
+								<label>Lifespan Days</label>
+								<color>146,208,80</color>
+								<defaultValue>120</defaultValue>
+								<min>0.001</min>
+								<max>9999</max>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 120,           Vanilla grass= 20</text>
+								<tooltip>How many days the grass will last before dying naturally of old age.</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Rest Hours -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>This is when the grass will begin resting for the night.</text>
+								<tooltip>I recommend leaving this at default.  If you want the grass to grow 24 hours per day, set Rest Begins=23, and Rest Ends=0.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>This is when the grass will wake up and begin growing again, if the conditions are suitable.</text>
+								<tooltip>I recommend leaving this at default.  If you want the grass to grow 24 hours per day, set Rest Begins=23, and Rest Ends=0.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>WRGrestBegins</key>
+								<label>Rest Begins</label>
+								<color>146,208,80</color>
+								<defaultValue>19</defaultValue>
+								<min>0</min>
+								<max>24</max>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>WRGrestEnds</key>
+								<label>Rest Ends</label>
+								<color>146,208,80</color>
+								<defaultValue>5</defaultValue>
+								<min>0</min>
+								<max>24</max>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 19, 5,         Vanilla grass= 19, 5</text>
+								<tooltip>I recommend leaving this at default.  If you want the grass to grow 24 hours per day, and you have a way to create sunlight during the night, set Rest Begins=23, and Rest Ends=0.</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+				
+					<!-- Nutrition -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>How much nutrition the grass provides for grazing animals.</text>
+								<tooltip>How much nutrition the grass provides for grazing animals.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>WRGNutrition</key>
+								<label>Nutrition</label>
+								<color>146,208,80</color>
+								<defaultValue>0.5</defaultValue>
+								<decimals>5</decimals>
+								<min>0.0001</min>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 0.5,           Vanilla grass= 0.5</text>
+								<tooltip>How much nutrition the grass provides for grazing animals.</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- flammable -->
+										
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Makes the grass nonflammable.</text>
+								<tooltip>When checked, the grass will be immune to fire.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Checkbox">
+								<key>WRGFlammability</key>
+								<label>Nonflammable</label>
+								<defaultValue>false</defaultValue>
+								<tooltip>When checked, the grass will be immune to fire.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+								<highlight>true</highlight>
+								<style>Checkbox</style>
+								<height>22</height>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Vacuum Resistant -->
+										
+					<!-- <li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Makes the grass vacuum resistant.</text>
+								<tooltip>When checked, the grass will be able to grow in the vacuum of space.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Checkbox">
+								<key>RGVacResist</key>
+								<label>Vacuum Resistant</label>
+								<defaultValue>false</defaultValue>
+								<tooltip>When checked, the grass will be able to grow in the vacuum of space.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+								<highlight>true</highlight>
+								<style>Checkbox</style>
+								<height>22</height>
+							</li>
+						</rightCol>
+					</li> -->
+					
+					<!-- Selectable -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Makes the grass selectable, in case you like to touch grass.</text>
+								<tooltip>It means you can select it, the same as a bush or a tree.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Checkbox">
+								<key>WRGselectable</key>
+								<label>Selectable</label>
+								<defaultValue>false</defaultValue>
+								<tooltip>It means you can select it, the same as a bush or a tree.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+								<highlight>true</highlight>
+								<style>Checkbox</style>
+								<height>22</height>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Hydroponics -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Allow the grass to by grown in Hydroponics Basins</text>
+								<tooltip>Maybe you want to fill your barn with hydroponics?</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Checkbox">
+								<key>WRGHydroponics</key>
+								<label>Plantable in Hydroponics</label>
+								<defaultValue>false</defaultValue>
+								<tooltip>Maybe you want to fill your barn with hydroponics?</tooltip>
+								<color>146,208,80</color>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+								<highlight>true</highlight>
+								<style>Checkbox</style>
+								<height>22</height>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Formula Image -->
+				
+					<li Class="XmlExtensions.Setting.DrawImage">
+						<texPath>Grow_Days</texPath>
+						<dimensions>615,67</dimensions>
+						<anchor>Middle</anchor>
+					</li>
+							
+					<li Class="XmlExtensions.Setting.GapLine"/>
+			
+				</settings>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- ================= Winter RyeGrass ================= -->
+
+			<li Class="XmlExtensions.Setting.Gap">
+				<spacing>10</spacing>
+			</li>
+			<li Class="XmlExtensions.Setting.CollapsibleSettings">
+				<label>Dark Winter RyeGrass</label>
+				<headerFont>Medium</headerFont>
+				<defaultState>Closed</defaultState>
+				<padLeft>0</padLeft>
+				<anchor>Left</anchor>
+				<settings>
+
+					<li Class="XmlExtensions.Setting.Text">
+						<text>Temperatures should descend in order from highest to lowest</text>
+						<anchor>Middle</anchor>
+					</li>
+					<li Class="XmlExtensions.Setting.SplitColumns">
+						<gapSize>0</gapSize>
+						<drawLine>false</drawLine>
+						<widths>
+							<li>225</li>
+							<li>290</li>
+						</widths>
+						<anchors>
+							<li>Middle</li>
+							<li>Middle</li>
+							<li>Middle</li>
+						</anchors>
+						<settings>
+						
+							<!--Column one-->
+						
+							<li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>At temperatures above this level, the grass will begin to die.</text>
+									<tooltip>At temperatures above this level, the grass will begin to die.</tooltip>
+									<color>250,100,10</color>
+									<padLeft>10</padLeft>
+									<padBelow>0</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>This is the upper range of normal grass growth.</text>
+									<tooltip>This is the upper range of normal grass growth.&#10;At temperatures above this level, the growth rate slows linearly from 100% to 0% when it reaches the Max Growth Temp setting.</tooltip>
+									<color>218,197,70</color>
+									<padBelow>15</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>This is the optimal growth temp range.</text>
+									<tooltip>This is the optimal growth temperature range.  The grass will grow at 100% growth rate within this range.</tooltip>
+									<color>146,208,80</color>
+									<padBelow>15</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>This is the lower range of normal grass growth.</text>
+									<tooltip>This is the lower range of normal grass growth.&#10;At temperatures below this level, the growth rate slows linearly from 100% to 0% when it reaches the Min Growth Temp setting.</tooltip>
+									<color>78,210,147</color>
+									<padBelow>0</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>At temperatures below this level, the grass will turn brown in color.</text>
+									<tooltip>At temperatures below this level, the grass will turn brown in color, but will not die. This is a visual change only, and is meant to be an indicator that the grass is not growing at its normal rate.</tooltip>
+									<color>153,102,0</color>
+									<padBelow>0</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>At temperatures below this level, the grass will stop growing.</text>
+									<tooltip>At temperatures below this level, the grass will cease to grow, but will not die.</tooltip>
+									<color>90,169,214</color>
+									<padBelow>0</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>At temperatures below this level, the grass will begin to die.</text>
+									<tooltip>At temperatures below this level, the grass will begin to die.</tooltip>
+									<color>50,87,246</color>
+									<padBelow>0</padBelow>
+									<padLeft>10</padLeft>
+								</li>
+							</li>
+
+							<!-- Visual Image -->
+
+							<li>
+								<li Class="XmlExtensions.Setting.DrawImage">
+									<texPath>Visual</texPath>
+									<dimensions>290,322</dimensions>
+									<anchor>Middle</anchor>
+								</li>
+							</li>
+
+							<!--Column three-->
+
+							<li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>DWRGmaxGrowthTemperature</key>
+									<label>Max Growth Temp</label>
+									<color>250,100,10</color>
+									<defaultValue>25</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= 25°C,         Vanilla grass= 75°C</text>
+									<tooltip>At temperatures above this level, the grass will begin to die.</tooltip>
+									<color>250,100,10</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>DWRGmaxOptimalGrowthTemperature</key>
+									<label>Max Optimal Temp</label>
+									<color>218,197,70</color>
+									<defaultValue>15</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= 15°C,         Vanilla grass= 42°C</text>
+									<tooltip>This is the upper range of normal grass growth.&#10;&#10;At temperatures above this level, the growth rate slows linearly from 100% to 0% when it reaches the Max Growth Temp setting.</tooltip>
+									<color>218,197,70</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>DWRGminOptimalGrowthTemperature</key>
+									<label>Min Optimal Temp</label>
+									<color>78,210,147</color>
+									<defaultValue>-25</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= -25°C,       Vanilla grass= 10°C</text>
+									<tooltip>This is the lower range of normal grass growth.&#10;&#10;At temperatures below this level, the growth rate slows linearly from 100% to 0% when it reaches the Min Growth Temp setting.</tooltip>
+									<color>78,210,147</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>DWRGmaxLeaflessTemperature</key>
+									<label>Max Leafless Temp</label>
+									<color>153,102,0</color>
+									<defaultValue>-27</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= -27°C,        Vanilla grass= -2°C</text>
+									<tooltip>At temperatures below this level, the grass will turn brown in color, but will not die.&#10;&#10;This is a visual change only, and is meant to be an indicator that the grass is not growing at its normal rate.</tooltip>
+									<color>153,102,0</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>DWRGminGrowthTemperature</key>
+									<label>Min Growth Temp</label>
+									<color>90,169,214</color><color>90,169,214</color>
+									<defaultValue>-35</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= -35°C,        Vanilla grass= 0°C</text>
+									<tooltip>At temperatures below this level, the grass will cease to grow, but will not die.</tooltip>
+									<color>90,169,214</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+									<padBelow>6</padBelow>
+								</li>
+								<li Class="XmlExtensions.Setting.Numeric">
+									<key>DWRGminLeaflessTemperature</key>
+									<label>Min Leafless Temp</label>
+									<color>50,87,246</color>
+									<defaultValue>-50</defaultValue>
+									<min>-270</min>
+									<max>1000</max>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default= -50°C,        Vanilla grass= -10°C</text>
+									<tooltip>At temperatures below this level, the grass will begin to die.</tooltip>
+									<color>50,87,246</color>
+									<anchor>Left</anchor>
+									<padLeft>10</padLeft>
+									<padRight>0</padRight>
+								</li>
+							</li>
+						</settings>
+					</li>
+					
+					<!--Gap-->
+					
+					<li Class="XmlExtensions.Setting.Gap">
+						<spacing>20</spacing>
+					</li>
+			
+					<!--Growth Stats-->
+			
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>How many straight days of growing time it will take for the grass to reach maturity, not including the plant's resting period.</text>
+								<tooltip>*This is not the actual growing days, since the grass must rest during the night.  The actual formula is shown down below, and depends on the plant's fertility sensitivity, as well as the fertility of the soil it is planted in.&#10;&#10;For example: If you use the default settings, it will take this many actual days to reach maturity:&#10;&#10;Winter RyeGrass	|     Vanilla Grass&#10;Poor Soil: 6.6	|     Poor Soil: 5.1&#10;Normal Soil: 4.6	|     Normal Soil: 4.6&#10;Rich soil: 3.3	|     Rich soil: 4.1</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>DWRGgrowDays</key>
+								<label>Grow Days*</label>
+								<color>146,208,80</color>
+								<defaultValue>2.5</defaultValue>
+								<min>0.001</min>
+								<max>9999</max>
+								<decimals>2</decimals>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 2.5,            Vanilla grass= 2.5</text>
+								<tooltip>*This is not the actual growing days, since the grass must rest during the night.  The actual formula is shown down below, and depends on the plant's fertility sensitivity, as well as the fertility of the soil it is planted in.&#10;&#10;For example: If you use the default settings, it will take this many actual days to reach maturity:&#10;&#10;Winter RyeGrass	|     Vanilla Grass&#10;Poor Soil: 6.6	|     Poor Soil: 5.1&#10;Normal Soil: 4.6	|     Normal Soil: 4.6&#10;Rich soil: 3.3	|     Rich soil: 4.1</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+								
+					<!-- Fertility Sensitivity -->
+				
+					<li Class="XmlExtensions.Setting.SplitColumn">
+							
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>How sensitive this plant is to soil fertility.</text>
+								<tooltip>Low numbers mean the grass will grow about the same speed in rich or poor soil. High numbers mean the plant will grow slower in poor soil, but faster in rich soil.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>DWRGfertilitySensitivity</key>
+								<label>Fertility Sensitivity</label>
+								<color>146,208,80</color>
+								<defaultValue>100</defaultValue>
+								<decimals>0</decimals>
+								<percent>True</percent>
+								<min>0</min>
+								<max>200</max>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 100%,        Vanilla grass= 30%</text>
+								<tooltip>Low numbers mean the grass will grow about the same speed in rich or poor soil. High numbers mean the plant will grow slower in poor soil, but faster in rich soil.</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Lifespan Days -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>How many days the grass will last before dying naturally of old age.</text>
+								<tooltip>How many days the grass will last before dying naturally of old age.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>DWRGlifespanDays</key>
+								<label>Lifespan Days</label>
+								<color>146,208,80</color>
+								<defaultValue>120</defaultValue>
+								<min>0.001</min>
+								<max>9999</max>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 120,           Vanilla grass= 20</text>
+								<tooltip>How many days the grass will last before dying naturally of old age.</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+				
+					<!-- Rest Hours -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>This is when the grass will begin resting for the night.</text>
+								<tooltip>I recommend leaving this at default.  If you want the grass to grow 24 hours per day, set Rest Begins=23, and Rest Ends=0.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>This is when the grass will wake up and begin growing again, if the conditions are suitable.</text>
+								<tooltip>I recommend leaving this at default.  If you want the grass to grow 24 hours per day, set Rest Begins=23, and Rest Ends=0.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>DWRGrestBegins</key>
+								<label>Rest Begins</label>
+								<color>146,208,80</color>
+								<defaultValue>19</defaultValue>
+								<min>0</min>
+								<max>24</max>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>DWRGrestEnds</key>
+								<label>Rest Ends</label>
+								<color>146,208,80</color>
+								<defaultValue>5</defaultValue>
+								<min>0</min>
+								<max>24</max>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 19, 5,         Vanilla grass= 19, 5</text>
+								<tooltip>I recommend leaving this at default.  If you want the grass to grow 24 hours per day, set Rest Begins=23, and Rest Ends=0.</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Nutrition -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>How much nutrition the grass provides for grazing animals.</text>
+								<tooltip>How much nutrition the grass provides for grazing animals.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Numeric">
+								<key>DWRGNutrition</key>
+								<label>Nutrition</label>
+								<color>146,208,80</color>
+								<defaultValue>0.5</defaultValue>
+								<decimals>5</decimals>
+								<min>0.0001</min>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+							</li>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Mod default= 0.5,           Vanilla grass= 0.5</text>
+								<tooltip>How much nutrition the grass provides for grazing animals.</tooltip>
+								<color>146,208,80</color>
+								<anchor>Left</anchor>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- flammable -->
+										
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Makes the grass nonflammable.</text>
+								<tooltip>When checked, the grass will be immune to fire.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Checkbox">
+								<key>DWRGFlammability</key>
+								<label>Nonflammable</label>
+								<defaultValue>false</defaultValue>
+								<tooltip>When checked, the grass will be immune to fire.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+								<highlight>true</highlight>
+								<style>Checkbox</style>
+								<height>22</height>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Vacuum Resistant -->
+										
+					<!-- <li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Makes the grass vacuum resistant.</text>
+								<tooltip>When checked, the grass will be able to grow in the vacuum of space.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Checkbox">
+								<key>DWRGVacResist</key>
+								<label>Vacuum Resistant</label>
+								<defaultValue>false</defaultValue>
+								<tooltip>When checked, the grass will be able to grow in the vacuum of space.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+								<highlight>true</highlight>
+								<style>Checkbox</style>
+								<height>22</height>
+							</li>
+						</rightCol>
+					</li> -->
+					
+					<!-- Selectable -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Makes the grass selectable, in case you like to touch grass.</text>
+								<tooltip>It means you can select it, the same as a bush or a tree.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Checkbox">
+								<key>DWRGselectable</key>
+								<label>Selectable</label>
+								<defaultValue>false</defaultValue>
+								<tooltip>It means you can select it, the same as a bush or a tree.</tooltip>
+								<color>146,208,80</color>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+								<highlight>true</highlight>
+								<style>Checkbox</style>
+								<height>22</height>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Hydroponics -->
+					
+					<li Class="XmlExtensions.Setting.SplitColumn">
+						<leftCol>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Allow the grass to by grown in Hydroponics Basins</text>
+								<tooltip>Maybe you want to fill your barn with hydroponics?</tooltip>
+								<color>146,208,80</color>
+								<padLeft>10</padLeft>
+							</li>
+						</leftCol>
+						<rightCol>
+							<li Class="XmlExtensions.Setting.Checkbox">
+								<key>DWRGHydroponics</key>
+								<label>Plantable in Hydroponics</label>
+								<defaultValue>false</defaultValue>
+								<tooltip>Maybe you want to fill your barn with hydroponics?</tooltip>
+								<color>146,208,80</color>
+								<padLeft>100</padLeft>
+								<padRight>0</padRight>
+								<padBelow>6</padBelow>
+								<highlight>true</highlight>
+								<style>Checkbox</style>
+								<height>22</height>
+							</li>
+						</rightCol>
+					</li>
+					
+					<!-- Formula Image -->
+				
+					<li Class="XmlExtensions.Setting.DrawImage">
+						<texPath>Grow_Days</texPath>
+						<dimensions>615,67</dimensions>
+						<anchor>Middle</anchor>
+					</li>
+			
+				</settings>
+			</li>
+			
+			<!-- ================= Reset Button ================= -->
+	
+			<li Class="XmlExtensions.Setting.GapLine"/>
+			<li Class="XmlExtensions.Setting.Text">
+				<font>Medium</font>
+				<text>Game must be restarted for any changes to take effect!</text>
+				<anchor>Middle</anchor>
+				<color>255,0,0</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Gap">
+				<spacing>10</spacing>
+			</li>
+			<li Class="XmlExtensions.Setting.ResetSettings">
+				<message>Game must be restarted for any changes to take effect!</message>
+				<padRight>700</padRight>
+			</li>
+		</settings>
+	</XmlExtensions.SettingsMenuDef>
+</Defs>
+

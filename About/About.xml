@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Winter RyeGrass</name>
+	<author>VitaKaninen</author>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>Vita.WinterRyeGrass</packageId>
+	<description>Adds 2 new grasses that can be sown in winter - Winter RyeGrass and Dark Winter RyeGrass.  They use the same textures as Vanilla Grass. The dark variant will use the NightGrass texture if you have the Odyssey DLC.
+	
+	Winter RyeGrass is a fast growing pasture grass generally planted in the fall or early winter. It is cold hardy, and can survive through all but the harshest of winters and serve as a steady source of grazing grass when no other plants are growing on the map.
+	
+	Dark Winter RyeGrass, is the same as above, but dies in the sunlight.  It is intended to be used in the GlowForest biome in Odyssey, but you can also plant it indoors or under roofs if you are on a different biome.
+	
+	Here are the stats I have chosen for both variants, but if you wish to change them, you can use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2574315206]XML Extensions[/url] and there will be new mod options where you can adjust whatever you like.
+	
+	Optimal growing temperature is between -25°C and 15°C
+	Growth slows linearly from 15°C to 25°C, and from -25°C to -35°C
+	Foliage turns brown below -27°C
+	Dies at temperatures below -50°C or above 25°C
+	
+		[IMG]https://i.ibb.co/hR9QHSXW/2025-12-19-090108.jpg[/IMG]
+	
+	If you want your animals to be able to graze while the grass is buried under the snow, you will also need the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2302739121]Graze up[/url] mod, which I highly recommend.
+	
+	[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2958061468]Expandable Plants[/url] is required, as it exposes hardcoded plant stats to xml.
+	
+	[h2]FAQ[/h2]
+	[b]Q:[/b] Is this mod safe to add or remove mid-save?
+	[b]A:[/b] Yes, it is safe to add at any time.  If you decide to remove it mid-save, you will get a bunch of one-time red errors, and any Winter RyeGrass on your maps will disappear.
+	
+	[h2]FAQ[/h2]
+	[b]Q:[/b] I want it to grow 24/7 in hydroponics, in any temperature, be non-flammable, give infinite nutrition, and only take 5 minutes to mature!
+	[b]A:[/b] You will need [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2574315206]XML Extensions[/url] for that, and then check the mod settings.
+	</description>
+	<modDependencies>
+		<li>
+			<packageId>mlie.expandableplants</packageId>
+			<displayName>Expandable Plants (Continued)</displayName>
+			<downloadUrl>https://github.com/emipa606/ExpandablePlants</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2958061468</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>imranfish.xmlextensions</li>
+	</loadAfter>
+</ModMetaData>

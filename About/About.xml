@@ -4,6 +4,7 @@
 	<author>VitaKaninen</author>
 	<supportedVersions>
 		<li>1.6</li>
+		<li>1.7</li>
 	</supportedVersions>
 	<packageId>Vita.WinterRyeGrass</packageId>
 	<description>Adds 2 new grasses that can be sown in winter - Winter RyeGrass and Dark Winter RyeGrass.  They use the same textures as Vanilla Grass. The dark variant will use the NightGrass texture if you have the Odyssey DLC.
